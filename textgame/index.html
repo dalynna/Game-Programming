@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="game.js"></script>
+    <link rel="stylesheet" type="text/css" href="game.css"><link>
+</head>
+
+<body style="background-size: cover;">
+
+    <!-- loading gif -->
+    <div id="load"><img src="assets/loading.gif"> </div>
+
+    <!-- home page w/ title -->
+    <div id="main" style="display:none">
+
+     <!--title  -->
+    <div id="title" style="font-size:120px">
+        <p>A WAY OUT</p>
+    </div>
+
+    <div id="game_text" style="display:none"></div>
+
+    <!-- home page buttons -->
+    <button id="but_p" onclick="key_input('play');" style="font-size:80px">Play</button>
+    <button id="but_cont" onclick="key_input('continue');" style="font-size:60px;display:none">Continue</button>
+    <button id="but_a" onclick="key_input('A');" style="font-size:60px;display:none"></button>
+    <button id="but_b" onclick="key_input('B');" style="font-size:60px;display:none"></button>
+
+     <div id="game_img">
+        <img src="assets/awayout.jpeg">
+    </div>
+
+    </div>
+        <audio id="bg_music" src="assets/music.mp3" loop></audio>
+        <div class="music-toggle">
+        <button id="musicButton" class="but_music" style="font-size: 15px;">Play Music</button>
+
+        <video controls id="show_video" type="video/mp4" style="display: none;"></video>
+        <audio id="play_sound" type="audio/mpeg"></video>
+    </div>
+
+</body>
+
+</html>

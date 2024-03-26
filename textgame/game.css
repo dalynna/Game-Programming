@@ -1,0 +1,210 @@
+#load {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* play button */
+#but_p {
+    color: #151515;
+    margin-top: 15%;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 7px;
+    border-color: black;
+    background-image: linear-gradient(rgb(70, 70, 70), rgb(134, 134, 134));
+    font-family: Impact, Haettenschweiler, sans-serif;
+
+    /* hover code */
+    transition: width 2s linear 1s;
+    animation: but_a 4s;
+}
+#but_p {
+    position: absolute;
+    top: 51%;
+    left: 8%;
+}
+
+/* continue */
+#but_cont {
+    color: #151515;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 7px;
+    border-color: black;
+    background-image: linear-gradient(rgb(70, 70, 70), rgb(134, 134, 134));
+    font-family: Impact, Haettenschweiler, sans-serif;
+
+    transition: width 2s linear 1s;
+    animation: but_a 4s;
+}
+#but_cont {
+    position: absolute;
+    top: 79.9%;
+    left: 41%;
+}
+
+/* button a */
+#but_a {
+    color: #151515;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 7px;
+    border-color: black;
+    background-image: linear-gradient(rgb(70, 70, 70), rgb(134, 134, 134));
+    font-family: Impact, Haettenschweiler, sans-serif;
+
+    /* hover code */
+    transition: width 2s linear 1s;
+    animation: but_a 4s;
+}
+#but_a {
+    position: absolute;
+    top: 79.9%;
+    left: 25%;
+}
+@keyframes but_a {
+    0% {opacity: 0;}
+     100% {opacity: 1;}
+}
+
+/* button b */
+#but_b {
+    color: #151515;
+    border-radius: 25px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-width: 7px;
+    border-color: black;
+    background-image: linear-gradient(rgb(70, 70, 70), rgb(134, 134, 134));
+    font-family: Impact, Haettenschweiler, sans-serif;
+
+    /* hover code */
+    transition: width 2s linear 1s;
+    animation: but_a 4s;
+}
+#but_b {
+    position: absolute;
+    top: 79.9%;
+    left: 55%;
+}
+@keyframes but_b{
+    0% { opacity: 0;}
+    100% { opacity: 1;}
+}
+
+/* hover colors */
+#but_p:hover {
+    scale: 1.06;
+     background-image: linear-gradient(to bottom, #383838, rgb(121, 121, 121));
+}
+#but_a:hover {
+    scale: 1.06;
+     background-image: linear-gradient(to bottom, #383838, rgb(121, 121, 121));
+}
+#but_b:hover {
+    scale: 1.06;
+     background-image: linear-gradient(to bottom, #383838, rgb(121, 121, 121));
+}
+#but_cont:hover {
+    scale: 1.06;
+    background-image: linear-gradient(to bottom, #383838, rgb(121, 121, 121));
+}
+
+/* title */
+#title {
+    /* slide code */
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    position: absolute;
+
+    top: 39%;
+    font-family: Impact, Haettenschweiler, sans-serif;
+    color: rgb(255, 213, 0);
+    
+    -webkit-text-stroke: 3px black;
+    text-shadow: -8px 1px 0 #000;
+}
+#title p {
+    animation: 4s game_text;
+    margin-left: 6%;
+}
+@keyframes game_text {
+    from { margin-left: -100%; }
+    to { margin-left: 6%; }
+}
+
+.wrapper #game_text {
+    display: grid;
+    place-items: center;
+  }
+
+#game_text {
+    text-align: center;
+    color: white;
+    width: 100vh;
+    animation: typing 2s steps(10), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    border-color: #00000000;
+    font-family: monospace;
+    font-size: 2.2em;
+    padding-left: 21%;
+    padding-top: 13%;
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent
+    }
+}
+
+.but_music {
+    color: #151515;
+    border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-width: 7px;
+    border-color: black;
+    background-image: linear-gradient(rgb(70, 70, 70), rgb(134, 134, 134));
+    font-family: Impact, Haettenschweiler, sans-serif;
+
+    /* hover code */
+    transition: width 2s linear 1s;
+    animation: but_music 4s;
+  }
+
+  .but_music {
+    position: absolute;
+    top: 95.8%;
+  }
+
+
+* { 
+    margin: 0;
+    padding: 0;
+}
+
+  #game_img {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  #show_video {
+    display: block;
+    margin: auto;
+  }

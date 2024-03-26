@@ -1,0 +1,487 @@
+{
+    "start_state" : "start",
+    "states" : {
+        "start" : {
+            "next_state" : [
+                {
+                    "state_name": "play_game",
+                    "key_input": "play"
+                }
+            ]
+        },
+
+        "play_game": {
+            "next_state" : ["continue_game"],
+            "stim_change" : 5,
+            "point_change" : 1,
+            "show_none" : "yes",
+            "image_change" : "assets/screen.jpg"
+        },
+
+        "continue_game": {
+            "text": "(You are playing as Leo)<br><br>In 1972, Colorado, Vincent Moretti and <br>Leonard Caruso meet in prison under dire<br> circumstances. Vincent saves Leo's life,<br> leading to an unlikely partnership fueled<br> by mutual vengeance against a crime boss.<br> Together, they plan an escape, facing<br> challenges and uncovering personal vendettas.<br>  Their journey culminates in a showdown with<br> their nemesis, but betrayal and deception<br> complicate their quest for justice.",
+            "stim_change": 5,
+            "point_change": 1,
+            "show_cont": "yes",
+            "next_state": [
+                {
+                    "state_name" : "q1",
+                    "key_input" : "continue"
+                }
+            ]
+        },
+
+        "q1": {
+            "text": "Leo wants to escape through the courtyard,<br> but Vincent wants to escape through the vents..<br><br>Escape through the vents or escape through<br> the courtyard?",
+            "stim_change" : 10,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "vent_continue",
+                    "key_input": "A",
+                    "button_text" : "Vents"
+                },
+
+                {
+                    "state_name": "courtyard_stim",
+                    "key_input": "B",
+                    "button_text" : "Courtyard"
+                }
+                
+            ]
+        },
+
+        "vent_continue": {
+            "text" : "You guys need a tool to break<br> the bars in the vents...",
+            "dope_change": 5,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "vent_tool",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "vent_tool": {
+            "text" : "What tool should do the job?",
+            "dope_change": 5,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "wrong_vent",
+                    "key_input": "A",
+                    "button_text" : "Scissors"
+                },
+                {
+                    "state_name": "continue_vent",
+                    "key_input": "B",
+                    "button_text" : "Nail Filer"
+                }
+            ]
+        },
+
+        "wrong_vent": {
+            "text" : "Are you a fucking idiot man?<br> Jesus christ try again.",
+            "stim_change": 5,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "vent_tool",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "continue_vent": {
+            "text" : "Good thing you didn't pick the scissors.<br>Only a fucking dumbass would pick that.<br><br>But nice job bro let's get this shit open.",
+            "stim_change": 5,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "courtyard_stim",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "courtyard_stim": {
+            "text" : "Sweet we made it to the courtyard.<br><br> Should we try sneaking through<br> the guard door or climb the wall.",
+            "dope_change": 5,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "door_stim",
+                    "key_input": "A",
+                    "button_text" : "Door"
+                },
+                {
+                    "state_name": "climb_stim",
+                    "key_input": "B",
+                    "button_text" : "Climb"
+                }
+            ]
+        },
+
+        "door_stim": {
+            "text" : "Damn you didn't wanna climb the wall?<br>Wuss.",
+            "show_cont" : "yes",
+            "stim_change" : 5,
+            "point_change": 1,
+            "next_state" :
+            [
+                {
+                    "state_name": "outside_dope",
+                    "key_input": "continue"
+                }
+            ] 
+        },
+
+        "climb_stim": {
+            "text" : "Wow you guys are so buff huh,<br> you guys would be good at rock climbing.",
+            "show_cont" : "yes",
+            "dope_change": 5,
+            "point_change": 1,
+            "next_state" :
+            [
+                {
+                    "state_name": "outside_dope",
+                    "key_input": "continue"
+                }
+            ] 
+        },
+        
+        "outside_dope": {
+            "text" : "Woohoo we made it out. You guys are a good duo.<br><br> Now we gotta get some big boy guns<br> to kill that coward of a crime boss.",
+            "dope_change": 10,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state":
+            [
+                {
+                    "state_name": "chase_stim",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "chase_stim": {
+            "text" : "OH SHIT THE GUARDS ARE CHASING US RUN!!",
+            "play_sound" : "assets/cop.mp3",
+            "stim_change": 10,
+            "point_change": 1,
+            "next_state": 
+            [
+                {
+                    "state_name": "why_walk",
+                    "key_input": "A",
+                    "button_text" : "Walk"
+                },
+                {
+                    "state_name": "phew_dope",
+                    "key_input": "B",
+                    "button_text" : "RUN"
+                }
+            ]
+        },
+
+        "why_walk": {
+            "text" : "Why the hell are you walking dude?<br> Are you guys grandpas or something.<br> Pick again.",
+            "stim_change": 10,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": 
+            [
+                {
+                    "state_name": "chase_stim",
+                    "key_input": "continue"
+                }
+                
+            ]
+        },
+
+        "phew_dope": {
+            "text" : "Phew we made it out alive,<br> lets pick out some guns.", 
+           "pause_sound" : "assets/cops.mp3",
+             "stim_change": 1,
+            "point_change": 1,
+            "show_cont" :"yes",
+            "next_state": 
+            [
+                {
+                    "state_name": "pick_gun_stim",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+
+        "pick_gun_stim": {
+            "text" : "Which gun would you like?",
+            "stim_change": 1,
+            "point_change": 1,
+            "next_state": 
+            [
+                {
+                    "state_name": "nice_choice",
+                    "key_input": "A",
+                    "button_text" : "AK-47"
+
+                },
+                {
+                    "state_name": "nice_choice",
+                    "key_input": "B",
+                    "button_text" : "M16"
+                }
+            ]
+        },
+
+        "nice_choice": {
+            "text" : "Nice choice!<br> Make sure you got some good aim buddy.",
+            "dope_change": 5,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": 
+            [
+                {
+                    "state_name": "drive_off",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "drive_off": {
+            "text" : "Let's hijack the closest car and drive to Mexico.<br> we heard the crime boss should be there,<br>fucking Harvey..",
+            "show_cont" : "yes",
+            "stim_change": 5,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "plane_stim",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "plane_stim": {
+            "text" : "Vincent has a friend, Emily, that could<br> take us to Mexico by plane.<br><br> It'll be quicker that way Vincent said.",
+            "show_cont" : "yes",
+            "stim_change": 1,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "bad_guys",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "bad_guys": {
+            "text" : "Aw shit we ran into some of Harvey's men.<br> We gotta take them out.<br> We got this bro.",
+            "stim_change": 1,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "kill_bad_guys",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "kill_bad_guys": {
+            "text" : "Leo: Good shots man, I didn't know you<br> had it in you to even shoot a gun.<br><br> Vincent: Oh shut it man. Let's go kill<br> that son of a bitch in his mansion.",
+            "stim_change": 1,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "kill_harvey",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "kill_harvey": {
+            "text" : "Look there I see him on the second floor!<br><br>...<br><br>Who's going to take the shot.",
+            "stim_change": 1,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "vincent_kill",
+                    "key_input": "A", 
+                    "button_text" : "Let Vincent"
+
+                },{
+                    "state_name": "leo_kill",
+                    "key_input": "B",
+                    "button_text" : "Let Leo"
+                }
+            ]
+        },
+
+        "vincent_kill": {
+            "text" : "Vincent: Fuck yeah!<br><br> That's what you get for killing my<br> brother you son of a bitch.",
+            "stim_change": 1,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "back_plane",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "leo_kill": {
+            "text" : "Hell yeah!<br><br> That's what you get for betraying me you bastard.",
+            "stim_change": 1,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "back_plane",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "back_plane": {
+            "text" : "Alright let's head back on the plane.<br> Mission complete.",
+            "dope_change": 10,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "land_plane",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "land_plane": {
+            "text" : "* Leo, Emily, and Vincent get back to Colorado *<br><br> Once we got back, the police showed up...<br><br> They knew our exact location...",
+            "stim_change": 1,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "plot_twist",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "plot_twist": {
+            "text" : "The police arrived to arrest the escaped prisoners,<br><br> The police captain walks up to Vincent...<br><br>* Nodding his head * <br><br> Captain: Good job, Vincent<br><br> * Hands him a handgun *",
+            "stim_change": 10,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "plot_twist_cont",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "plot_twist_cont": {
+            "text" : "Leo: Vincent what the fuck is going on?!<br> Why aren't you in handcuffs?<br><br> Vincent: I'm sorry Leo.",
+            "stim_change": 15,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "vincent_talk",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "vincent_talk": {
+            "text" : "Vincent: Look Leo, listen-<br><br>Leo: No fuck you Vincent! You undercover scumbag. <br>You betrayed me.<br><br> Vincent: I had to do it for my wife and son.<br><br>Leo: Oh yeah? What about my family,<br> they need me too.",
+            "stim_change": 15,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "leo_run",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "leo_run": {
+            "text" : "* Leo makes a run for it and grabs one <br>of the officer's gun *<br><br> Vincent goes after him.",
+            "stim_change": 5,
+            "point_change": 1,
+            "show_cont" : "yes",
+            "next_state": [
+                {
+                    "state_name": "leo_vincent",
+                    "key_input": "continue"
+                }
+            ]
+        },
+
+        "leo_vincent": {
+            "text" : "For justice...<br><br>do you choose to kill Vincent or let him kill you?",
+            "stim_change": 10,
+            "point_change": 1,
+            "next_state": [
+                {
+                    "state_name": "kill_vincent",
+                    "key_input": "A",
+                    "button_text" : "Kill Vincent"
+
+                },
+                {
+                    "state_name": "kill_leo",
+                    "key_input": "B",
+                    "button_text" : "Let him kill you"
+                }
+            ]
+        },
+
+        "kill_vincent": {
+            "text" : "Ending for Leo",
+            "dope_change": 20,
+            "show_cont" :"yes",
+            "point_change": 1,
+            "show_video" : "assets/leo.mp4",
+            "next_state": [
+                {
+                    "state_name": "thank_you",
+                    "key_input": "continue"
+
+                }
+            ]
+            
+        },
+
+        "kill_leo": {
+            "text" : "Ending for Vincent",
+            "dope_change": 20,
+            "show_cont" :"yes",
+            "point_change": 1,
+            "show_video" : "assets/vincent.mp4",
+            "next_state": [
+                {
+                    "state_name": "thank_you",
+                    "key_input": "continue"
+
+                }
+            ]
+        },
+
+        "thank_you": {
+            "text" : "Thank you for playing.",
+            "stim_change": 1,
+            "point_change": 1,
+            "show_none" :"yes"
+        }
+    }
+}
